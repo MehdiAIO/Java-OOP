@@ -1,10 +1,9 @@
 public class Script {
     public static void main(String[] args) {
-        Person p1 = new Person("Mehdi", 21, 84.7);
-        Person p2 = new Person("Ahmed", 18, 67.9);
-        System.out.println(p1.name);
-        p1.age();
-        p1.weight();
-        p2.hey();
+        Pizza pizza = new Pizza("thicc crust","tomato","mozzerella","pepperoni");
+        System.out.println(pizza.bread);
+        System.out.println(pizza.sauce);
+        System.out.println(pizza.cheese);
+        System.out.println(pizza.topping);
     }
 }
