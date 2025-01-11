@@ -1,9 +1,15 @@
 public class Script {
     public static void main(String[] args) {
-        Pizza pizza = new Pizza("thicc crust","tomato","mozzerella","pepperoni");
-        System.out.println(pizza.bread);
-        System.out.println(pizza.sauce);
-        System.out.println(pizza.cheese);
-        System.out.println(pizza.topping);
+
+        // toString() = special method that all objects inherit,
+
+        // that returns a string that "textually represents" an object.
+
+        // can be used both implicitly and explicitly
+
+        Car car1 = new Car();
+
+        System.out.println(car1.toString());
+
     }
 }
