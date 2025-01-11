@@ -1,15 +1,21 @@
 public class Script {
     public static void main(String[] args) {
 
-        // toString() = special method that all objects inherit,
+        Food[] refrigerator = new Food[3];
 
-        // that returns a string that "textually represents" an object.
+        Food f1 = new Food("pizza", 3.80);
+        Food f2 = new Food("sushi", 23.07);
+        Food f3 = new Food("ramen", 7.33);
 
-        // can be used both implicitly and explicitly
+        refrigerator[0] = f1;
+        refrigerator[1] = f2;
+        refrigerator[2] = f3;
 
-        Car car1 = new Car();
+        // Food[] refrigerator = {f1,f2,f3};
 
-        System.out.println(car1.toString());
+        for (int i = 0; i < refrigerator.length; i++) {
+            System.out.println(refrigerator[i]);
+        }
 
     }
 }
