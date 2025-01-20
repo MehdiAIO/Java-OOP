@@ -1,11 +1,8 @@
 public class Script {
     public static void main(String[] args) {
-        Car car1 = new Car("BMW");
-        Car car2 = new Car("Tesla");
+        Friend f1 = new Friend("mehdi");
+        Friend f2 = new Friend("abdessamad");
 
-        Garage garage = new Garage();
-
-        garage.park(car1);
-        garage.park(car2);
+        Friend.numOfFriends();
     }
 }
