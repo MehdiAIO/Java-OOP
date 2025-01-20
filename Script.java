@@ -1,8 +1,11 @@
 public class Script {
     public static void main(String[] args) {
-        Friend f1 = new Friend("mehdi");
-        Friend f2 = new Friend("abdessamad");
+        Car car = new Car();
+        Bike bike = new Bike();
 
-        Friend.numOfFriends();
+        car.go();
+        bike.stop();
+        System.out.println(car.doors);
+        System.out.println(bike.pedals);
     }
 }
