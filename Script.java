@@ -1,10 +1,11 @@
 public class Script {
-    // abstract = abstract classes cannot be instantiated, but they can have a
-    // subclass
-
-    // abstract methods are declared without an implementation
     public static void main(String[] args) {
-        Car c1 = new Car();
-        c1.go();
+        Car car1 = new Car("Ford", "Mustang", 2007);
+        car1.setDate(2022);
+        car1.setMake("Tesla");
+        car1.setModel("areox");
+        System.out.println(car1.getModel());
+        System.out.println(car1.getMake());
+        System.out.println(car1.getDate());
     }
 }
