@@ -19,5 +19,6 @@ public class Script {
             animal = new Animal();
             animal.speak();
         }
+        scanner.close();
     }
 }
