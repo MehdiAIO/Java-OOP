@@ -1,16 +1,23 @@
+import java.util.Scanner;
+
 public class Script {
-    // polymorphism = greek word for poly-"many", morph-"form"
-
-    // The ability of an object to identify as more than one typeé
     public static void main(String[] args) {
-        Boat boat = new Boat();
-        Bike bike = new Bike();
-        Car car = new Car();
+        Scanner scanner = new Scanner(System.in);
+        Animal animal;
 
-        Vehicule[] vehicules = {boat,bike,car};
-        for(Vehicule x : vehicules){
-            x.go();
+        System.out.println("What animal your looking for ?");
+        System.out.print("1 = dog or 2 = cat");
+        int choice = scanner.nextInt();
+
+        if (choice == 1) {
+            animal = new Dog();
+            animal.speak();
+        } else if (choice == 2) {
+            animal = new Cat();
+            animal.speak();
+        } else {
+            animal = new Animal();
+            animal.speak();
         }
     }
-
 }
