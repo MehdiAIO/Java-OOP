@@ -1,12 +1,16 @@
 public class Script {
-    public static void main(String[] args) {
-        Fish fish = new Fish();
-        Hawk hawk = new Hawk();
-        Rabbit rabbit = new Rabbit();
+    // polymorphism = greek word for poly-"many", morph-"form"
 
-        rabbit.flee();
-        hawk.hunt();
-        fish.flee();
-        fish.hunt();
+    // The ability of an object to identify as more than one typeé
+    public static void main(String[] args) {
+        Boat boat = new Boat();
+        Bike bike = new Bike();
+        Car car = new Car();
+
+        Vehicule[] vehicules = {boat,bike,car};
+        for(Vehicule x : vehicules){
+            x.go();
+        }
     }
+
 }
