@@ -9,6 +9,10 @@ public class Car {
         this.setDate(date);
     }
 
+    Car(Car x){
+        this.copy(x);
+    }
+
     public String getMake() {
         return make;
     }
@@ -31,5 +35,11 @@ public class Car {
 
     public void setDate(int date) {
         this.date = date;
+    }
+
+    public void copy(Car x){
+        this.setMake(x.getMake());
+        this.setModel(x.getModel());
+        this.setDate(x.getDate());
     }
 }
