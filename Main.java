@@ -1,23 +1,29 @@
-import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> fruits = new ArrayList<>();
-
-        fruits.add("Apple");
-        fruits.add("Banana");
-        fruits.add("Orange");
-
-        System.out.println(fruits); // [Apple, Banana, Orange]
-
-        fruits.remove("Banana");
-        System.out.println(fruits.get(1)); // Orange
-
-        fruits.set(0, "Mango");
-        System.out.println(fruits); // [Mango, Orange]
-
-        System.out.println(fruits.contains("Apple")); // false
-        System.out.println(fruits.size()); // 2
-        System.out.println(fruits.isEmpty());
+        // Exception = An event that interrupts the normal flow of a program
+        //                      (Dividing by zero, file not found, mismatch input type)
+        //                      Surround any dangerous code with a try{} block
+        //                       try{}, catch{}, finally{}
+        Scanner scanner = new Scanner(System.in);
+        try{
+            System.out.println("entrez 1er nombre");
+            int a = scanner.nextInt();
+            System.out.println("entrez 2eme nombre");
+            int b = scanner.nextInt();
+            System.out.println(a / b);
+        }
+        catch(ArithmeticException e){
+            System.out.println("il est impossible de diviser par zero");
+        }
+        catch(InputMismatchException e){
+            System.out.println("Vous devez entrer un nombre");
+        }
+        finally{
+            scanner.close();
+            System.out.println("Au Revoir !");
+        }
     }
 }
