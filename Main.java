@@ -1,29 +1,25 @@
-import java.util.InputMismatchException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Exception = An event that interrupts the normal flow of a program
-        //                      (Dividing by zero, file not found, mismatch input type)
-        //                      Surround any dangerous code with a try{} block
-        //                       try{}, catch{}, finally{}
-        Scanner scanner = new Scanner(System.in);
-        try{
-            System.out.println("entrez 1er nombre");
-            int a = scanner.nextInt();
-            System.out.println("entrez 2eme nombre");
-            int b = scanner.nextInt();
-            System.out.println(a / b);
+
+        String filePath = "text.txt";
+        String text = "";  // initialized to avoid compilation error
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Écrire quelque chose:");
+            text = scanner.nextLine();
+        } catch (Exception e) {
+            System.err.println("Erreur lors de la lecture de l'entrée: " + e.getMessage());
         }
-        catch(ArithmeticException e){
-            System.out.println("il est impossible de diviser par zero");
-        }
-        catch(InputMismatchException e){
-            System.out.println("Vous devez entrer un nombre");
-        }
-        finally{
-            scanner.close();
-            System.out.println("Au Revoir !");
+
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.write(text);
+            System.out.println("Texte enregistré dans le fichier.");
+        } catch (IOException e) {
+            System.err.println("Erreur lors de l'écriture dans le fichier: " + e.getMessage());
         }
     }
 }
